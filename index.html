@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ingeniería Industrial - Plataforma</title>
+
+<style>
+body {margin:0; font-family:Arial; background:#0f172a; color:white; display:flex;}
+.sidebar {width:280px; background:#020617; padding:20px;}
+.sidebar button {width:100%; padding:10px; margin:5px 0; background:#1e293b; color:white; border:none; cursor:pointer;}
+.sidebar button:hover {background:#38bdf8;}
+.content {flex:1; padding:30px;}
+.card {background:#1e293b; padding:15px; border-radius:10px; margin:10px 0;}
+
+a {
+display:inline-block;
+margin-top:10px;
+padding:10px;
+background:#38bdf8;
+color:black;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>🏭 Industrial</h2>
+
+<button onclick="cargar('basicas')">Ciencias Básicas</button>
+<button onclick="cargar('ingenieria')">Ingeniería</button>
+<button onclick="cargar('gestion')">Gestión</button>
+<button onclick="cargar('aplicacion')">Aplicación</button>
+
+</div>
+
+<div class="content" id="contenido">
+<h1>Bienvenido</h1>
+<p>Selecciona un bloque de aprendizaje</p>
+</div>
+
+<script>
+
+function materia(t,d,link){
+return `
+<div class="card">
+<h3>${t}</h3>
+<p>${d}</p>
+<a href="${link}">Entrar →</a>
+</div>`;
+}
+
+function cargar(b){
+
+let c = document.getElementById("contenido");
+
+/* CIENCIAS BASICAS */
+if(b=="basicas"){
+c.innerHTML = `
+<h1>🔹 Ciencias Básicas</h1>
+${materia("Cálculo I","Derivadas","materias/calculo1.html")}
+${materia("Cálculo II","Integrales","materias/calculo2.html")}
+${materia("Cálculo III","Multivariable","materias/calculo3.html")}
+${materia("Álgebra Lineal","Matrices","materias/algebra.html")}
+${materia("Física I","Movimiento","materias/fisica1.html")}
+${materia("Física II","Energía","materias/fisica2.html")}
+${materia("Estadística I","Datos","materias/estadistica1.html")}
+${materia("Estadística II","Probabilidad","materias/estadistica2.html")}
+`;
+}
+
+/* INGENIERIA */
+if(b=="ingenieria"){
+c.innerHTML = `
+<h1>🔹 Ingeniería</h1>
+${materia("Procesos Industriales","Producción","materias/procesos.html")}
+${materia("Investigación de Operaciones I","Optimización","materias/io1.html")}
+${materia("Investigación de Operaciones II","Modelos","materias/io2.html")}
+${materia("Simulación","Modelos","materias/simulacion.html")}
+${materia("Producción","Gestión","materias/produccion.html")}
+${materia("Calidad","Control","materias/calidad.html")}
+`;
+}
+
+/* GESTION */
+if(b=="gestion"){
+c.innerHTML = `
+<h1>🔹 Gestión</h1>
+${materia("Logística","Distribución","materias/logistica.html")}
+${materia("Supply Chain","Cadena","materias/supply.html")}
+${materia("Finanzas","Empresa","materias/finanzas.html")}
+${materia("Planeación","Estrategia","materias/planeacion.html")}
+${materia("Gestión Empresarial","Negocios","materias/gestion.html")}
+${materia("Innovación","Creatividad","materias/innovacion.html")}
+`;
+}
+
+/* APLICACION */
+if(b=="aplicacion"){
+c.innerHTML = `
+<h1>🔹 Aplicación</h1>
+${materia("Proyecto de Grado","Final","materias/proyecto.html")}
+${materia("Práctica Profesional","Empresa","materias/practica.html")}
+`;
+}
+
+}
+
+</script>
+
+</body>
+</html>
