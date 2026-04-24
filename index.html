@@ -2,15 +2,40 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Ingeniería Industrial - Plataforma</title>
+<title>Ingeniería Industrial</title>
 
 <style>
 body {margin:0; font-family:Arial; background:#0f172a; color:white; display:flex;}
+
 .sidebar {width:280px; background:#020617; padding:20px;}
-.sidebar button {width:100%; padding:10px; margin:5px 0; background:#1e293b; color:white; border:none; cursor:pointer;}
+
+.sidebar h2 {color:#38bdf8;}
+
+.sidebar button {
+width:100%;
+padding:10px;
+margin:5px 0;
+background:#1e293b;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:5px;
+}
+
 .sidebar button:hover {background:#38bdf8;}
+
 .content {flex:1; padding:30px;}
-.card {background:#1e293b; padding:15px; border-radius:10px; margin:10px 0;}
+
+.card {
+background:#1e293b;
+padding:15px;
+border-radius:10px;
+margin:10px 0;
+}
+
+.card h3 {color:#38bdf8;}
+
+.card p {color:#cbd5e1; line-height:1.5;}
 
 a {
 display:inline-block;
@@ -28,18 +53,22 @@ font-weight:bold;
 <body>
 
 <div class="sidebar">
-<h2>🏭 Industrial</h2>
+<h2>🏭 Ingeniería Industrial</h2>
 
-<button onclick="cargar('basicas')">Ciencias Básicas</button>
-<button onclick="cargar('ingenieria')">Ingeniería</button>
-<button onclick="cargar('gestion')">Gestión</button>
-<button onclick="cargar('aplicacion')">Aplicación</button>
+<button onclick="cargar('sem1')">Sem 1</button>
+<button onclick="cargar('sem2')">Sem 2</button>
+<button onclick="cargar('sem3')">Sem 3</button>
+<button onclick="cargar('sem4')">Sem 4</button>
+<button onclick="cargar('sem5')">Sem 5</button>
+<button onclick="cargar('sem6')">Sem 6</button>
+<button onclick="cargar('sem7')">Sem 7</button>
+<button onclick="cargar('sem8')">Sem 8</button>
 
 </div>
 
 <div class="content" id="contenido">
 <h1>Bienvenido</h1>
-<p>Selecciona un bloque de aprendizaje</p>
+<p>Selecciona un semestre</p>
 </div>
 
 <script>
@@ -53,57 +82,243 @@ return `
 </div>`;
 }
 
-function cargar(b){
+function cargar(s){
 
-let c = document.getElementById("contenido");
+let c=document.getElementById("contenido");
 
-/* CIENCIAS BASICAS */
-if(b=="basicas"){
-c.innerHTML = `
-<h1>🔹 Ciencias Básicas</h1>
-${materia("Cálculo I","Derivadas","materias/calculo1.html")}
-${materia("Cálculo II","Integrales","materias/calculo2.html")}
-${materia("Cálculo III","Multivariable","materias/calculo3.html")}
-${materia("Álgebra Lineal","Matrices","materias/algebra.html")}
-${materia("Física I","Movimiento","materias/fisica1.html")}
-${materia("Física II","Energía","materias/fisica2.html")}
-${materia("Estadística I","Datos","materias/estadistica1.html")}
-${materia("Estadística II","Probabilidad","materias/estadistica2.html")}
+/* SEM 1 */
+if(s=="sem1"){
+c.innerHTML=`
+<h1>📘 Semestre 1</h1>
+
+${materia(
+"Cálculo I",
+"Estudia funciones, límites y derivadas para modelar cambios en procesos industriales.",
+"materias/calculo1.html"
+)}
+
+${materia(
+"Álgebra Lineal",
+"Matrices y vectores aplicados a sistemas de producción y optimización.",
+"materias/algebra.html"
+)}
+
+${materia(
+"Introducción a la Ingeniería",
+"Visión general de la ingeniería industrial y su rol en la industria.",
+"materias/intro.html"
+)}
+
+${materia(
+"Dibujo Técnico",
+"Representación de planos, procesos y estructuras industriales.",
+"materias/dibujo.html"
+)}
 `;
 }
 
-/* INGENIERIA */
-if(b=="ingenieria"){
-c.innerHTML = `
-<h1>🔹 Ingeniería</h1>
-${materia("Procesos Industriales","Producción","materias/procesos.html")}
-${materia("Investigación de Operaciones I","Optimización","materias/io1.html")}
-${materia("Investigación de Operaciones II","Modelos","materias/io2.html")}
-${materia("Simulación","Modelos","materias/simulacion.html")}
-${materia("Producción","Gestión","materias/produccion.html")}
-${materia("Calidad","Control","materias/calidad.html")}
+/* SEM 2 */
+if(s=="sem2"){
+c.innerHTML=`
+<h1>📗 Semestre 2</h1>
+
+${materia(
+"Cálculo II",
+"Integrales aplicadas a análisis de producción y costos.",
+"materias/calculo2.html"
+)}
+
+${materia(
+"Física",
+"Fundamentos de movimiento, energía y fuerza en procesos industriales.",
+"materias/fisica.html"
+)}
+
+${materia(
+"Estadística I",
+"Análisis de datos para control de calidad y procesos.",
+"materias/estadistica1.html"
+)}
+
+${materia(
+"CAD",
+"Diseño asistido por computador en procesos industriales.",
+"materias/cad.html"
+)}
 `;
 }
 
-/* GESTION */
-if(b=="gestion"){
-c.innerHTML = `
-<h1>🔹 Gestión</h1>
-${materia("Logística","Distribución","materias/logistica.html")}
-${materia("Supply Chain","Cadena","materias/supply.html")}
-${materia("Finanzas","Empresa","materias/finanzas.html")}
-${materia("Planeación","Estrategia","materias/planeacion.html")}
-${materia("Gestión Empresarial","Negocios","materias/gestion.html")}
-${materia("Innovación","Creatividad","materias/innovacion.html")}
+/* SEM 3 */
+if(s=="sem3"){
+c.innerHTML=`
+<h1>📙 Semestre 3</h1>
+
+${materia(
+"Cálculo III",
+"Funciones multivariables aplicadas a optimización industrial.",
+"materias/calculo3.html"
+)}
+
+${materia(
+"Estadística II",
+"Probabilidad aplicada a toma de decisiones industriales.",
+"materias/estadistica2.html"
+)}
+
+${materia(
+"Procesos Industriales",
+"Estudio de sistemas de producción y manufactura.",
+"materias/procesos.html"
+)}
+
+${materia(
+"Investigación de Operaciones I",
+"Optimización de recursos en sistemas productivos.",
+"materias/io1.html"
+)}
 `;
 }
 
-/* APLICACION */
-if(b=="aplicacion"){
-c.innerHTML = `
-<h1>🔹 Aplicación</h1>
-${materia("Proyecto de Grado","Final","materias/proyecto.html")}
-${materia("Práctica Profesional","Empresa","materias/practica.html")}
+/* SEM 4 */
+if(s=="sem4"){
+c.innerHTML=`
+<h1>📕 Semestre 4</h1>
+
+${materia(
+"Ecuaciones Diferenciales",
+"Modelado matemático de sistemas dinámicos industriales.",
+"materias/ecuaciones.html"
+)}
+
+${materia(
+"Investigación de Operaciones II",
+"Modelos avanzados de optimización.",
+"materias/io2.html"
+)}
+
+${materia(
+"Economía",
+"Análisis económico de empresas y mercados.",
+"materias/economia.html"
+)}
+
+${materia(
+"Simulación",
+"Modelado de sistemas industriales en software.",
+"materias/simulacion.html"
+)}
+`;
+}
+
+/* SEM 5 */
+if(s=="sem5"){
+c.innerHTML=`
+<h1>📓 Semestre 5</h1>
+
+${materia(
+"Producción",
+"Gestión de procesos productivos en la industria.",
+"materias/produccion.html"
+)}
+
+${materia(
+"Calidad",
+"Sistemas de control y mejora de calidad.",
+"materias/calidad.html"
+)}
+
+${materia(
+"Finanzas",
+"Análisis financiero aplicado a empresas.",
+"materias/finanzas.html"
+)}
+
+${materia(
+"Logística",
+"Distribución y gestión de materiales.",
+"materias/logistica.html"
+)}
+`;
+}
+
+/* SEM 6 */
+if(s=="sem6"){
+c.innerHTML=`
+<h1>📒 Semestre 6</h1>
+
+${materia(
+"Supply Chain",
+"Gestión de cadenas de suministro.",
+"materias/supply.html"
+)}
+
+${materia(
+"Planeación",
+"Estrategias de planificación industrial.",
+"materias/planeacion.html"
+)}
+
+${materia(
+"Optimización",
+"Mejora de procesos y recursos.",
+"materias/optimizacion.html"
+)}
+
+${materia(
+"Gestión de Proyectos",
+"Dirección y control de proyectos industriales.",
+"materias/proyectos.html"
+)}
+`;
+}
+
+/* SEM 7 */
+if(s=="sem7"){
+c.innerHTML=`
+<h1>📔 Semestre 7</h1>
+
+${materia(
+"Lean Manufacturing",
+"Reducción de desperdicios en producción.",
+"materias/lean.html"
+)}
+
+${materia(
+"Innovación",
+"Desarrollo de nuevas soluciones industriales.",
+"materias/innovacion.html"
+)}
+
+${materia(
+"Analítica de Datos",
+"Uso de datos para decisiones industriales.",
+"materias/analitica.html"
+)}
+
+${materia(
+"Gestión Empresarial",
+"Dirección de organizaciones industriales.",
+"materias/gestion.html"
+)}
+`;
+}
+
+/* SEM 8 */
+if(s=="sem8"){
+c.innerHTML=`
+<h1>📘 Semestre 8</h1>
+
+${materia(
+"Proyecto de Grado",
+"Aplicación completa de conocimientos industriales.",
+"materias/proyecto.html"
+)}
+
+${materia(
+"Práctica Profesional",
+"Experiencia real en empresa.",
+"materias/practica.html"
+)}
 `;
 }
 
